@@ -6,11 +6,15 @@ import { Differentials } from "@/components/site/Differentials";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Faq } from "@/components/site/Faq";
 import { FinalCta } from "@/components/site/FinalCta";
+import { WhatsappFab } from "@/components/site/WhatsappFab";
 import { useReveal } from "@/hooks/use-reveal";
+import { SITE } from "@/lib/site";
+import { faqs } from "@/lib/faq";
 
 const title = "Veículos Elétricos em Hortolândia | Scooter & Cia";
 const description =
   "Motos, scooters, bikes e patinetes elétricos em Hortolândia/SP. Até 21x no cartão ou 5% OFF à vista. Loja física e oficina exclusiva para clientes.";
+const ogImage = `${SITE.url}og-image.jpg`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,17 +24,68 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "pt_BR" },
+      { property: "og:url", content: SITE.url },
+      { property: "og:image", content: ogImage },
+      { property: "og:site_name", content: SITE.name },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: ogImage },
     ],
+    links: [{ rel: "canonical", href: SITE.url }],
   }),
   component: Index,
 });
+
+/** Dados estruturados para o Google entender a loja e as dúvidas frequentes. */
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": `${SITE.url}#loja`,
+      name: SITE.name,
+      description,
+      url: SITE.url,
+      image: ogImage,
+      telephone: SITE.phoneE164,
+      priceRange: "$$",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: SITE.city,
+        addressRegion: SITE.state,
+        addressCountry: "BR",
+      },
+      areaServed: SITE.region,
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        bestRating: "5",
+        reviewCount: "9",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE.url}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
 
 function Index() {
   useReveal();
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen overflow-x-clip bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Header />
       <Hero />
       <Categories />
@@ -38,6 +93,7 @@ function Index() {
       <Testimonials />
       <Faq />
       <FinalCta />
+      <WhatsappFab />
     </main>
   );
 }

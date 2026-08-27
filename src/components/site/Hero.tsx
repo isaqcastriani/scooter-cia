@@ -84,26 +84,27 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative order-first lg:order-none">
+        <div className="relative">
           <div
             className="relative animate-hero-in"
             style={{ transform: `translate3d(0, ${offset * -0.05}px, 0)` }}
           >
-            {/* Halo por trás do recorte */}
-            <div className="pointer-events-none absolute inset-x-4 top-10 bottom-10 rounded-[50%] bg-lime/18 blur-3xl" />
-            <div className="pointer-events-none absolute inset-x-8 bottom-6 h-10 rounded-[50%] bg-ink/70 blur-2xl" />
+            {/* Halo por trás do recorte — separa a scooter escura do fundo ink */}
+            <div className="pointer-events-none absolute inset-x-2 top-6 bottom-8 rounded-[50%] bg-lime/22 blur-3xl" />
+            <div className="pointer-events-none absolute inset-x-10 top-1/4 bottom-1/4 rounded-[50%] bg-ink-foreground/10 blur-3xl" />
+            <div className="pointer-events-none absolute inset-x-8 bottom-4 h-10 rounded-[50%] bg-ink/80 blur-2xl" />
 
             <img
               src={heroRider}
-              alt="Cliente da Scooter & Cia pilotando uma scooter elétrica branca"
-              width={1000}
-              height={1244}
+              alt="Cliente da Scooter & Cia pilotando uma scooter elétrica"
+              width={1096}
+              height={1400}
               fetchPriority="high"
               decoding="async"
-              className="relative mx-auto w-full max-w-sm drop-shadow-2xl sm:max-w-md lg:max-w-none"
+              className="relative mx-auto w-[74%] max-w-[17rem] [filter:drop-shadow(0_0_1px_oklch(0.97_0.01_140/0.55))_drop-shadow(0_0_26px_oklch(0.87_0.21_128/0.28))_drop-shadow(0_28px_44px_oklch(0_0_0/0.55))] sm:w-full sm:max-w-md lg:max-w-none"
             />
 
-            <div className="glass-chip animate-float-soft absolute bottom-2 left-0 rounded-2xl px-4 py-3 sm:left-2 sm:px-5 sm:py-4 lg:bottom-6">
+            <div className="glass-chip animate-float-soft absolute bottom-0 left-0 rounded-2xl px-4 py-3 sm:px-5 sm:py-4 lg:bottom-2">
               <p className="text-[0.6rem] font-semibold tracking-[0.18em] text-ink-foreground/60 uppercase">
                 Condição
               </p>
@@ -111,7 +112,7 @@ export function Hero() {
               <p className="text-[0.7rem] text-ink-foreground/70 sm:text-xs">no cartão</p>
             </div>
 
-            <div className="glass-chip absolute top-2 right-0 flex items-center gap-2 rounded-full px-3 py-2 sm:right-2 sm:px-4 sm:py-2.5">
+            <div className="glass-chip absolute top-0 left-0 flex items-center gap-2 rounded-full px-3 py-2 sm:left-2 sm:px-4 sm:py-2.5 lg:top-4">
               <ShieldCheck className="size-4 shrink-0 text-lime" />
               <span className="text-[0.7rem] font-semibold text-ink-foreground/85 sm:text-xs">
                 Loja física + oficina
@@ -120,7 +121,7 @@ export function Hero() {
 
             <a
               href="#clientes"
-              className="glass-chip absolute right-0 bottom-2 flex items-center gap-1.5 rounded-full px-3 py-2 transition-colors hover:border-lime/40 sm:right-2 lg:bottom-6"
+              className="glass-chip absolute right-0 bottom-0 flex items-center gap-1.5 rounded-full px-3 py-2 transition-colors hover:border-lime/40 lg:bottom-2"
             >
               <Star className="size-3.5 shrink-0 fill-lime text-lime" />
               <span className="text-[0.7rem] font-semibold text-ink-foreground/85 sm:text-xs">

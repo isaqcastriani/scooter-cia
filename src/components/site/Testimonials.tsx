@@ -149,7 +149,7 @@ export function Testimonials() {
                     <img
                       src={client.image}
                       alt={`${client.name} com o ${client.model} adquirido na Scooter & Cia`}
-                      loading="lazy"
+loading="eager"
                       decoding="async"
                       width={760}
                       height={950}

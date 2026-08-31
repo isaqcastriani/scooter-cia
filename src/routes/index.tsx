@@ -10,6 +10,7 @@ import { WhatsappFab } from "@/components/site/WhatsappFab";
 import { useReveal } from "@/hooks/use-reveal";
 import { SITE } from "@/lib/site";
 import { faqs } from "@/lib/faq";
+import heroRider from "@/assets/hero-rider.webp";
 
 const title = "Veículos Elétricos em Hortolândia | Scooter & Cia";
 const description =
@@ -33,7 +34,10 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: ogImage },
     ],
-    links: [{ rel: "canonical", href: SITE.url }],
+links: [
+      { rel: "canonical", href: SITE.url },
+      { rel: "preload", href: heroRider, as: "image", type: "image/webp" },
+    ],
   }),
   component: Index,
 });

@@ -6,6 +6,7 @@
 - [ ] Formulário de captura de leads + integração WhatsApp (lead form + botão flutuante)
 
 ## Próximos passos (sugeridos)
-- [ ] Rastreamento de conversões (Google Tag / eventos de clique)
+- [x] Instalar Google Tag Manager (GTM-W8LWNKWW) no `<head>` e após `<body>`
+- [ ] Eventos de conversão via GTM (cliques em WhatsApp, envios de formulário)
 - [ ] Publicar site
 - [ ] Showcase de veículos com preços e specs

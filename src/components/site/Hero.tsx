@@ -71,7 +71,7 @@ export function Hero() {
             </a>
           </div>
 
-          <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-ink-foreground/10 pt-6">
+          <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-ink-foreground/10 pt-6 lg:mt-6 lg:pt-4">
             {tags.map((tag, i) => (
               <li key={tag} className="flex items-center gap-3">
                 <span className="text-[0.8rem] font-medium text-ink-foreground/70 sm:text-sm">

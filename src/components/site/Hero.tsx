@@ -52,7 +52,7 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:mt-5">
             <a
               href={WA.especialista}
               target="_blank"

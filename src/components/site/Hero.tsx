@@ -21,11 +21,14 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="topo" className="surface-ink relative overflow-hidden">
+    <section
+      id="topo"
+      className="surface-ink relative flex overflow-hidden lg:min-h-svh lg:items-center"
+    >
       <div className="grid-lines pointer-events-none absolute inset-0 opacity-60" />
       <div className="pointer-events-none absolute -top-40 -right-24 size-[26rem] rounded-full bg-lime/10 blur-3xl md:size-[36rem]" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pt-24 pb-16 sm:px-5 sm:pt-28 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-12 lg:pt-40 lg:pb-28">
+      <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 pt-24 pb-16 sm:px-5 sm:pt-28 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-10 lg:pt-28 lg:pb-12">
         <div className="animate-hero-in">
           <span className="glass-chip inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[0.66rem] font-semibold tracking-[0.16em] text-ink-foreground/80 uppercase sm:text-[0.68rem]">
             <MapPin className="size-3.5 shrink-0 text-lime" />

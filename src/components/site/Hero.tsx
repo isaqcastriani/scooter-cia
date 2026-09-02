@@ -28,14 +28,14 @@ export function Hero() {
       <div className="grid-lines pointer-events-none absolute inset-0 opacity-60" />
       <div className="pointer-events-none absolute -top-40 -right-24 size-[26rem] rounded-full bg-lime/10 blur-3xl md:size-[36rem]" />
 
-      <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 pt-20 pb-12 sm:px-5 sm:pt-24 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-8 lg:pt-16 lg:pb-8">
+      <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 pt-20 pb-12 sm:px-5 sm:pt-24 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-10 lg:pt-20 lg:pb-10">
         <div className="animate-hero-in">
           <span className="glass-chip inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[0.66rem] font-semibold tracking-[0.16em] text-ink-foreground/80 uppercase sm:text-[0.68rem]">
             <MapPin className="size-3.5 shrink-0 text-lime" />
             Hortolândia / SP
           </span>
 
-          <h1 className="mt-5 text-[clamp(1.9rem,7.5vw,2.5rem)] leading-[1.02] font-bold text-balance text-ink-foreground uppercase sm:mt-6 sm:text-5xl lg:mt-4 lg:text-[clamp(2.35rem,3.3vw,3.2rem)]">
+          <h1 className="mt-5 text-[clamp(1.9rem,7.5vw,2.5rem)] leading-[1.02] font-bold text-balance text-ink-foreground uppercase sm:mt-6 sm:text-5xl lg:mt-5 lg:text-[clamp(2.55rem,3.6vw,3.5rem)]">
             Veículos elétricos em <span className="text-gradient-lime">Hortolândia</span> e região
           </h1>
 
@@ -43,7 +43,7 @@ export function Hero() {
             Encontre a moto, scooter, bike ou patinete elétrico ideal para você
           </p>
 
-          <div className="mt-6 max-w-xl rounded-2xl border border-lime/25 bg-lime/8 p-4 backdrop-blur-sm sm:p-5 lg:mt-4 lg:p-4">
+          <div className="mt-6 max-w-xl rounded-2xl border border-lime/25 bg-lime/8 p-4 backdrop-blur-sm sm:p-5 lg:mt-5 lg:p-5">
             <p className="text-[0.95rem] leading-relaxed text-ink-foreground/90 sm:text-base">
               <span className="font-display font-bold text-lime">
                 Até 21x no cartão ou 5% OFF à vista.
@@ -52,7 +52,7 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:mt-5">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:mt-6">
             <a
               href={WA.especialista}
               target="_blank"
@@ -71,7 +71,7 @@ export function Hero() {
             </a>
           </div>
 
-          <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-ink-foreground/10 pt-6 lg:mt-5 lg:pt-3.5">
+          <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-ink-foreground/10 pt-6 lg:mt-6 lg:pt-4">
             {tags.map((tag, i) => (
               <li key={tag} className="flex items-center gap-3">
                 <span className="text-[0.8rem] font-medium text-ink-foreground/70 sm:text-sm">
@@ -104,7 +104,7 @@ export function Hero() {
               height={1400}
               fetchPriority="high"
               decoding="async"
-              className="relative mx-auto w-[74%] max-w-[17rem] [filter:drop-shadow(0_0_1px_oklch(0.97_0.01_140/0.55))_drop-shadow(0_0_26px_oklch(0.87_0.21_128/0.28))_drop-shadow(0_28px_44px_oklch(0_0_0/0.55))] sm:w-full sm:max-w-md lg:max-h-[52svh] lg:w-auto lg:max-w-none lg:object-contain"
+              className="relative mx-auto w-[74%] max-w-[17rem] [filter:drop-shadow(0_0_1px_oklch(0.97_0.01_140/0.55))_drop-shadow(0_0_26px_oklch(0.87_0.21_128/0.28))_drop-shadow(0_28px_44px_oklch(0_0_0/0.55))] sm:w-full sm:max-w-md lg:max-h-[57svh] lg:w-auto lg:max-w-none lg:object-contain"
             />
 
             <div className="glass-chip animate-float-soft absolute bottom-0 left-0 rounded-2xl px-4 py-3 sm:px-5 sm:py-4 lg:bottom-2">

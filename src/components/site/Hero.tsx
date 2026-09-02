@@ -35,15 +35,15 @@ export function Hero() {
             Hortolândia / SP
           </span>
 
-          <h1 className="mt-5 text-[clamp(1.9rem,7.5vw,2.5rem)] leading-[1.02] font-bold text-balance text-ink-foreground uppercase sm:mt-6 sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 text-[clamp(1.9rem,7.5vw,2.5rem)] leading-[1.02] font-bold text-balance text-ink-foreground uppercase sm:mt-6 sm:text-5xl lg:mt-4 lg:text-[clamp(2.5rem,3.6vw,3.5rem)]">
             Veículos elétricos em <span className="text-gradient-lime">Hortolândia</span> e região
           </h1>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-foreground/75 sm:text-lg">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-foreground/75 sm:text-lg lg:mt-3.5">
             Encontre a moto, scooter, bike ou patinete elétrico ideal para você
           </p>
 
-          <div className="mt-6 max-w-xl rounded-2xl border border-lime/25 bg-lime/8 p-4 backdrop-blur-sm sm:p-5">
+          <div className="mt-6 max-w-xl rounded-2xl border border-lime/25 bg-lime/8 p-4 backdrop-blur-sm sm:p-5 lg:mt-4 lg:p-4">
             <p className="text-[0.95rem] leading-relaxed text-ink-foreground/90 sm:text-base">
               <span className="font-display font-bold text-lime">
                 Até 21x no cartão ou 5% OFF à vista.

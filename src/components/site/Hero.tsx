@@ -104,7 +104,7 @@ export function Hero() {
               height={1400}
               fetchPriority="high"
               decoding="async"
-              className="relative mx-auto w-[74%] max-w-[17rem] [filter:drop-shadow(0_0_1px_oklch(0.97_0.01_140/0.55))_drop-shadow(0_0_26px_oklch(0.87_0.21_128/0.28))_drop-shadow(0_28px_44px_oklch(0_0_0/0.55))] sm:w-full sm:max-w-md lg:max-w-none"
+              className="relative mx-auto w-[74%] max-w-[17rem] [filter:drop-shadow(0_0_1px_oklch(0.97_0.01_140/0.55))_drop-shadow(0_0_26px_oklch(0.87_0.21_128/0.28))_drop-shadow(0_28px_44px_oklch(0_0_0/0.55))] sm:w-full sm:max-w-md lg:max-h-[62svh] lg:w-auto lg:max-w-none lg:object-contain"
             />
 
             <div className="glass-chip animate-float-soft absolute bottom-0 left-0 rounded-2xl px-4 py-3 sm:px-5 sm:py-4 lg:bottom-2">

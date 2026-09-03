@@ -1,14 +1,14 @@
 /** Dados de contato e links de conversão da Scooter & Cia. */
 
-export const WHATSAPP_NUMBER = "5519996436481";
+export const WHATSAPP_NUMBER = "5519998605136";
 
 export const SITE = {
   name: "Scooter & Cia",
   city: "Hortolândia",
   state: "SP",
   region: "Hortolândia e região",
-  phoneLabel: "(19) 99643-6481",
-  phoneE164: "+5519996436481",
+phoneLabel: "(19) 99860-5136",
+  phoneE164: "+5519998605136",
   url: "https://lp.scooterecia.com.br/",
 } as const;
 

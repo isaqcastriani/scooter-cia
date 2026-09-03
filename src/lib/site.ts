@@ -19,12 +19,14 @@ export function whatsappLink(message: string): string {
 
 const fromGoogle = "Olá. Vim do Google e gostaria de receber mais informações sobre";
 
+/** Mensagem do CTA principal e do botão flutuante. */
+const especialistaMsg =
+  "Olá. Vim do Google e quero falar com um especialista para escolher o veículo elétrico ideal para mim.";
+
 /** Links de CTA por contexto — cada origem chega com a mensagem certa. */
 export const WA = {
-  geral: whatsappLink(`${fromGoogle} os produtos da Scooter & Cia.`),
-  especialista: whatsappLink(
-    "Olá. Vim do Google e quero falar com um especialista para escolher o veículo elétrico ideal para mim.",
-  ),
+  geral: whatsappLink(especialistaMsg),
+  especialista: whatsappLink(especialistaMsg),
   scooter: whatsappLink(`${fromGoogle} as scooters elétricas da Scooter & Cia.`),
   moto: whatsappLink(`${fromGoogle} as motos elétricas da Scooter & Cia.`),
   bike: whatsappLink(`${fromGoogle} as bikes elétricas da Scooter & Cia.`),

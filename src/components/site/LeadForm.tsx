@@ -152,6 +152,12 @@ export function LeadForm() {
         body: JSON.stringify({
           ...data,
           pagina: window.location.href,
+          // Data/hora do envio no horário de Brasília, legível para o SDR (ex.: 06/10/2026 15:42).
+          data_envio: new Date().toLocaleString("pt-BR", {
+            timeZone: "America/Sao_Paulo",
+            dateStyle: "short",
+            timeStyle: "short",
+          }).replace(",", ""),
           enviado_em: new Date().toISOString(),
         }),
       });

@@ -1,9 +1,9 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import catScooter from "@/assets/cat-scooter.jpg";
 import catMoto from "@/assets/cat-moto.jpg";
 import catBike from "@/assets/cat-bike.jpg";
 import catPatinete from "@/assets/cat-patinete.jpg";
-import { WA } from "@/lib/site";
+import { FORM_HREF, PICK_VEHICLE_EVENT } from "@/lib/site";
 
 const items = [
   {
@@ -12,7 +12,8 @@ const items = [
     text: "Tecnologia e praticidade para seus deslocamentos urbanos.",
     image: catScooter,
     alt: "Scooter elétrica branca disponível na Scooter & Cia",
-    href: WA.scooter,
+    veiculo: "Scooter elétrica",
+    cta: "Quero minha scooter",
   },
   {
     icon: "🏍️",
@@ -20,7 +21,8 @@ const items = [
     text: "Mais desempenho e autonomia para seus deslocamentos.",
     image: catMoto,
     alt: "Moto elétrica azul disponível na Scooter & Cia",
-    href: WA.moto,
+    veiculo: "Moto elétrica",
+    cta: "Quero minha moto",
   },
   {
     icon: "🚲",
@@ -28,7 +30,8 @@ const items = [
     text: "Assistência elétrica para pedalar com mais conforto e liberdade.",
     image: catBike,
     alt: "Bike elétrica fat bike disponível na Scooter & Cia",
-    href: WA.bike,
+    veiculo: "Bicicleta elétrica",
+    cta: "Quero minha bike",
   },
   {
     icon: "🛴",
@@ -36,7 +39,8 @@ const items = [
     text: "Agilidade para pequenos trajetos, com praticidade para o dia a dia.",
     image: catPatinete,
     alt: "Patinete elétrico disponível na Scooter & Cia",
-    href: WA.patinete,
+    veiculo: "Patinete elétrico",
+    cta: "Quero meu patinete",
   },
 ];
 
@@ -61,9 +65,10 @@ export function Categories() {
           {items.map((item, i) => (
             <a
               key={item.title}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={FORM_HREF}
+              onClick={() =>
+                window.dispatchEvent(new CustomEvent(PICK_VEHICLE_EVENT, { detail: item.veiculo }))
+              }
               className="reveal group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-lime/40 hover:shadow-lift"
               style={{ transitionDelay: `${(i % 2) * 70}ms` }}
             >
@@ -84,15 +89,14 @@ export function Categories() {
                 </span>
               </div>
 
-              <div className="flex flex-1 items-start justify-between gap-4 p-5 sm:p-6 md:p-7">
-                <div>
-                  <h3 className="font-display text-lg font-bold sm:text-xl">{item.title}</h3>
-                  <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
-                    {item.text}
-                  </p>
-                </div>
-                <span className="mt-1 flex size-9 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-all duration-300 group-hover:border-lime group-hover:bg-lime group-hover:text-lime-foreground">
-                  <ArrowUpRight className="size-4" />
+              <div className="flex flex-1 flex-col p-5 sm:p-6 md:p-7">
+                <h3 className="font-display text-lg font-bold sm:text-xl">{item.title}</h3>
+                <p className="mt-2 mb-5 max-w-sm text-sm leading-relaxed text-muted-foreground sm:mb-6">
+                  {item.text}
+                </p>
+                <span className="mt-auto inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-ink px-6 text-xs font-bold tracking-[0.1em] text-ink-foreground uppercase transition-all duration-300 group-hover:bg-lime group-hover:text-lime-foreground sm:w-fit">
+                  {item.cta}
+                  <ArrowRight className="size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </div>
             </a>

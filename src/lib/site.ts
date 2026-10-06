@@ -1,40 +1,23 @@
-/** Dados de contato e links de conversão da Scooter & Cia. */
-
-export const WHATSAPP_NUMBER = "5519998605136";
+/** Dados de contato e conversão da Scooter & Cia. */
 
 export const SITE = {
   name: "Scooter & Cia",
   city: "Hortolândia",
   state: "SP",
   region: "Hortolândia e região",
-phoneLabel: "(19) 99860-5136",
+  phoneLabel: "(19) 99860-5136",
   phoneE164: "+5519998605136",
   url: "https://lp.scooterecia.com.br/",
 } as const;
 
-/** Monta um link de WhatsApp com a mensagem já preenchida. */
-export function whatsappLink(message: string): string {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-}
+/** Âncora do card do formulário (não da seção): no mobile o lead cai direto nas perguntas. */
+export const FORM_HREF = "#formulario";
 
-const fromGoogle = "Olá. Vim do Google e gostaria de receber mais informações sobre";
+/** Texto padrão de todos os CTAs. */
+export const CTA_LABEL = "Encontrar meu veículo ideal";
 
-/** Mensagem do CTA principal e do botão flutuante. */
-const especialistaMsg =
-  "Olá. Vim do Google e quero falar com um especialista para escolher o veículo elétrico ideal para mim.";
+/** Webhook do Make que recebe o lead e repassa para o SDR. */
+export const LEAD_WEBHOOK = "https://hook.us1.make.celonis.com/1stlolyli9czw9ifogsjrj6pfobkewar";
 
-/** Links de CTA por contexto — cada origem chega com a mensagem certa. */
-export const WA = {
-  geral: whatsappLink(especialistaMsg),
-  especialista: whatsappLink(especialistaMsg),
-  scooter: whatsappLink(`${fromGoogle} as scooters elétricas da Scooter & Cia.`),
-  moto: whatsappLink(`${fromGoogle} as motos elétricas da Scooter & Cia.`),
-  bike: whatsappLink(`${fromGoogle} as bikes elétricas da Scooter & Cia.`),
-  patinete: whatsappLink(`${fromGoogle} os patinetes elétricos da Scooter & Cia.`),
-  garantir: whatsappLink(
-    "Olá. Vim do Google, vi os depoimentos de clientes e quero garantir o meu veículo elétrico.",
-  ),
-  loja: whatsappLink(
-    "Olá. Vim do Google e gostaria de agendar uma visita à loja física em Hortolândia.",
-  ),
-} as const;
+/** Evento que os cards de categoria disparam para pré-selecionar o veículo no formulário. */
+export const PICK_VEHICLE_EVENT = "scooter:pick-vehicle";

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
-import { WhatsappIcon } from "./WhatsappIcon";
-import { WA, SITE } from "@/lib/site";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.svg";
+import { CTA_LABEL, FORM_HREF } from "@/lib/site";
 
 const nav = [
   { label: "Veículos", href: "#veiculos" },
   { label: "Por que a Scooter & Cia", href: "#diferenciais" },
   { label: "Clientes", href: "#clientes" },
+  { label: "Orçamento", href: FORM_HREF },
   { label: "Dúvidas", href: "#faq" },
 ];
 
@@ -44,13 +45,14 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-5 md:h-18 md:px-8">
-        <a href="#topo" className="group flex shrink-0 items-center gap-2 sm:gap-2.5">
-          <span className="flex size-8 items-center justify-center rounded-xl bg-lime text-lime-foreground transition-transform duration-300 group-hover:scale-105 sm:size-9">
-            <Zap className="size-4.5 sm:size-5" strokeWidth={2.5} />
-          </span>
-          <span className="font-display text-base leading-none font-bold tracking-tight text-ink-foreground sm:text-lg">
-            Scooter <span className="text-lime">&</span> Cia
-          </span>
+        <a href="#topo" className="shrink-0 transition-opacity duration-300 hover:opacity-85">
+          <img
+            src={logo}
+            alt="Scooter & Cia"
+            width={1858}
+            height={651}
+            className="h-9 w-auto sm:h-10 md:h-11"
+          />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -67,14 +69,11 @@ export function Header() {
 
         <div className="flex shrink-0 items-center gap-2">
           <a
-            href={WA.especialista}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={FORM_HREF}
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-lime px-4 text-[0.7rem] font-bold tracking-[0.1em] text-lime-foreground uppercase transition-all duration-300 hover:brightness-105 hover:shadow-[var(--shadow-lime)] md:px-6 md:text-xs"
           >
-            <WhatsappIcon className="size-4 shrink-0" />
-            <span className="hidden sm:inline">Falar com especialista</span>
-            <span className="sm:hidden">Falar agora</span>
+            <span className="hidden sm:inline">{CTA_LABEL}</span>
+            <span className="sm:hidden">Meu veículo ideal</span>
           </a>
 
           <button
@@ -111,14 +110,11 @@ export function Header() {
             </a>
           ))}
           <a
-            href={WA.loja}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={FORM_HREF}
             onClick={() => setOpen(false)}
-            className="my-3 flex min-h-12 items-center justify-center gap-2 rounded-full border border-lime/40 text-sm font-semibold text-lime"
+            className="my-3 flex min-h-12 items-center justify-center gap-2 rounded-full bg-lime text-sm font-bold text-lime-foreground"
           >
-            <WhatsappIcon className="size-4" />
-            {SITE.phoneLabel}
+            {CTA_LABEL}
           </a>
         </nav>
       </div>

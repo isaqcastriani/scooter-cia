@@ -4,8 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { WhatsappIcon } from "./WhatsappIcon";
-import { WA } from "@/lib/site";
+import { CTA_LABEL, FORM_HREF } from "@/lib/site";
 import { faqs } from "@/lib/faq";
 
 export function Faq() {
@@ -20,13 +19,10 @@ export function Faq() {
             Perguntas frequentes sobre veículos elétricos
           </h2>
           <a
-            href={WA.especialista}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={FORM_HREF}
             className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full bg-ink px-6 text-xs font-bold tracking-[0.1em] text-ink-foreground uppercase transition-all duration-300 hover:shadow-lift md:mt-8"
           >
-            <WhatsappIcon className="size-4 shrink-0" />
-            Falar com especialista
+            {CTA_LABEL}
           </a>
         </div>
 

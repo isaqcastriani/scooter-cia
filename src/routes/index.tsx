@@ -5,8 +5,8 @@ import { Categories } from "@/components/site/Categories";
 import { Differentials } from "@/components/site/Differentials";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Faq } from "@/components/site/Faq";
+import { LeadForm } from "@/components/site/LeadForm";
 import { FinalCta } from "@/components/site/FinalCta";
-import { WhatsappFab } from "@/components/site/WhatsappFab";
 import { useReveal } from "@/hooks/use-reveal";
 import { SITE } from "@/lib/site";
 import { faqs } from "@/lib/faq";
@@ -92,12 +92,12 @@ function Index() {
       />
       <Header />
       <Hero />
+      <LeadForm />
       <Categories />
       <Differentials />
       <Testimonials />
       <Faq />
       <FinalCta />
-      <WhatsappFab />
     </main>
   );
 }

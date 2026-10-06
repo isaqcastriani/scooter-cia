@@ -141,8 +141,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   );
 }
 
+function loadScript(src: string) {
+  return new Promise<void>((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error(`Falha ao carregar ${src}`));
+    document.body.appendChild(script);
+  });
+}
+
+/**
+ * Captura de UTMs/parâmetros GET (código da agência, em public/gpc-utm.js).
+ * Carregado só depois da hidratação: se rodasse antes, o React devolveria
+ * os campos ocultos ao valor "{utm_*}" original.
+ */
+function useUtmCapture() {
+  useEffect(() => {
+    if (document.querySelector('script[src="/gpc-utm.js"]')) return;
+    const jquery = window.jQuery
+      ? Promise.resolve()
+      : loadScript("https://code.jquery.com/jquery-3.7.1.min.js");
+    jquery.then(() => loadScript("/gpc-utm.js")).catch(console.error);
+  }, []);
+}
+
+declare global {
+  interface Window {
+    jQuery?: unknown;
+  }
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useUtmCapture();
 
   return (
     <QueryClientProvider client={queryClient}>

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, MapPin, ShieldCheck, Star } from "lucide-react";
 import heroRider from "@/assets/hero-rider.webp";
-import { WhatsappIcon } from "./WhatsappIcon";
-import { WA } from "@/lib/site";
+import { CTA_LABEL, FORM_HREF } from "@/lib/site";
 
 const tags = ["Scooters elétricas", "Motos elétricas", "Bikes elétricas", "Patinetes elétricos"];
 
@@ -25,7 +24,9 @@ export function Hero() {
       id="topo"
       className="surface-ink relative flex overflow-hidden lg:min-h-svh lg:items-center"
     >
-      <div className="grid-lines pointer-events-none absolute inset-0 opacity-60" />
+      <div className="grid-lines pointer-events-none absolute inset-0 opacity-60 [mask-image:linear-gradient(to_bottom,black_65%,transparent)]" />
+      {/* Funde o rodapé do Hero no tom de abertura da seção do formulário. */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-linear-to-b from-transparent to-ink-deep" />
       <div className="pointer-events-none absolute -top-40 -right-24 size-[26rem] rounded-full bg-lime/10 blur-3xl md:size-[36rem]" />
 
       <div className="relative mx-auto grid w-full max-w-7xl gap-10 px-4 pt-20 pb-12 sm:px-5 sm:pt-24 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:gap-10 lg:pt-20 lg:pb-10">
@@ -54,20 +55,11 @@ export function Hero() {
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 lg:mt-6">
             <a
-              href={WA.especialista}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={FORM_HREF}
               className="group inline-flex min-h-13 items-center justify-center gap-2.5 rounded-full bg-lime px-6 text-[0.8rem] font-bold tracking-[0.08em] text-lime-foreground uppercase transition-all duration-300 hover:brightness-105 hover:shadow-[var(--shadow-lime)] sm:px-7 sm:text-sm sm:tracking-[0.1em]"
             >
-              <WhatsappIcon className="size-4.5 shrink-0" />
-              Falar com especialista
+              {CTA_LABEL}
               <ArrowRight className="size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#veiculos"
-              className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-ink-foreground/20 px-6 text-sm font-semibold text-ink-foreground/85 transition-colors duration-300 hover:border-lime/50 hover:text-ink-foreground"
-            >
-              Ver modelos
             </a>
           </div>
 

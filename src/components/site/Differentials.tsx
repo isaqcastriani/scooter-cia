@@ -1,8 +1,7 @@
 import storeFront from "@/assets/store-front.jpg";
 import workshop from "@/assets/workshop.jpg";
 import rideAction from "@/assets/ride-action.jpg";
-import { WhatsappIcon } from "./WhatsappIcon";
-import { WA } from "@/lib/site";
+import { CTA_LABEL, FORM_HREF } from "@/lib/site";
 
 const items = [
   {
@@ -74,13 +73,10 @@ export function Differentials() {
             </h2>
           </div>
           <a
-            href={WA.especialista}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={FORM_HREF}
             className="inline-flex min-h-12 w-fit items-center gap-2 rounded-full border border-ink-foreground/20 px-6 text-xs font-bold tracking-[0.1em] text-ink-foreground uppercase transition-colors duration-300 hover:border-lime hover:text-lime"
           >
-            <WhatsappIcon className="size-4 shrink-0" />
-            Falar com especialista
+            {CTA_LABEL}
           </a>
         </div>
 

@@ -6,8 +6,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { WhatsappIcon } from "./WhatsappIcon";
-import { WA } from "@/lib/site";
+import { CTA_LABEL, FORM_HREF } from "@/lib/site";
 import c1 from "@/assets/client-1.jpg";
 import c2 from "@/assets/client-2.jpg";
 import c3 from "@/assets/client-3.jpg";
@@ -201,13 +200,10 @@ loading="eager"
 
         <div className="reveal mt-10 flex justify-center md:mt-14">
           <a
-            href={WA.garantir}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={FORM_HREF}
             className="group inline-flex min-h-14 items-center justify-center gap-2.5 rounded-full bg-lime px-8 text-[0.8rem] font-bold tracking-[0.08em] text-lime-foreground uppercase transition-all duration-300 hover:brightness-105 hover:shadow-[var(--shadow-lime)] sm:px-9 sm:text-sm sm:tracking-[0.1em]"
           >
-            <WhatsappIcon className="size-4.5 shrink-0" />
-            Garantir a minha
+            {CTA_LABEL}
             <ArrowRight className="size-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </div>

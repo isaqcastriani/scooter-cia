@@ -35,6 +35,7 @@
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
   --color-ink-soft: var(--ink-soft);
+  --color-ink-deep: var(--ink-deep);
   --color-lime: var(--lime);
   --color-lime-foreground: var(--lime-foreground);
   --color-sidebar: var(--sidebar);
@@ -68,6 +69,7 @@
   --ink: oklch(0.17 0.028 158);
   --ink-foreground: oklch(0.97 0.01 140);
   --ink-soft: oklch(0.24 0.03 158);
+  --ink-deep: oklch(0.13 0.02 158);
 
   --primary: oklch(0.87 0.21 128);
   --primary-foreground: oklch(0.18 0.04 150);
@@ -83,7 +85,7 @@
   --input: oklch(0.915 0.006 150);
   --ring: oklch(0.87 0.21 128);
 
-  --gradient-ink: linear-gradient(160deg, oklch(0.2 0.03 158), oklch(0.13 0.02 158));
+  --gradient-ink: linear-gradient(160deg, oklch(0.2 0.03 158), var(--ink-deep));
   --gradient-lime: linear-gradient(100deg, oklch(0.9 0.2 132), oklch(0.83 0.21 122));
   --shadow-soft:
     0 1px 2px oklch(0.17 0.028 158 / 0.04), 0 12px 32px -18px oklch(0.17 0.028 158 / 0.28);

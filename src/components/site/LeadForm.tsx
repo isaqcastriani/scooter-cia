@@ -46,7 +46,7 @@ const questions = [
     options: [
       "À vista (Pix/dinheiro, com desconto)",
       "Cartão de crédito em até 21x",
-      "Financiamento / boleto",
+      "Entrada + cartão de crédito",
     ],
   },
 ] as const;
